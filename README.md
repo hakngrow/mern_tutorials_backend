@@ -29,5 +29,73 @@ The following table shows an overview of the REST APIs that will be built:
 | `tutorial.routes.js` | Mapping of API routes to the controller functions |
 
 
+### Create Node.js App
+
+1. Create a application folder
+```
+mkdir mern_tutorials_backend
+cd mern_tutorials_backend
+```
+
+2. Initialize a Node.js application
+```
+npm init
+```
+
+3. Setup the Express web application framework<br/>
+
+Using your preferred code editor, create a new `server.js` file in the application root folder.
+
+```
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+var corsOptions = {
+  origin: "http://localhost:8081",
+};
+
+app.use(cors(corsOptions));
+
+// Parse requests of content-type - application/json
+app.use(express.json());
+
+// Parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+// Connect to database - Mongo Atlas
+const db = require("./app/models");
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
+
+// Testing route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
+});
+
+// API routes
+require("./app/routes/tutorial.routes")(app);
+
+// Set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
+```
+
+
 
 
