@@ -16,9 +16,9 @@ The following table shows an overview of the REST APIs that will be built:
 | GET | api/tutorials?title=[keywords] | Find all tutorials with title contains keywords |
 
 
-### Project Structure
+### REST APIs App Structure
 
-Below is the project structure of our REST APIs.
+![Project Structure](/public/images/project_structure.jpg)
 
 | Folder/File | Purpose |
 | --- | --- |
@@ -27,8 +27,6 @@ Below is the project structure of our REST APIs.
 | `tutorial.controller.js` | Controller of the app, handles the CRUD operations |
 | `tutorial.model.js` | Schema definition of Tutorial table in database |
 | `tutorial.routes.js` | Mapping of API routes to the controller functions |
-
-![Project Structure](/public/images/project_structure.jpg)
 
 
 
