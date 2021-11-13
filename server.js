@@ -34,7 +34,7 @@ db.mongoose
 
 // Testing route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to tutorials listing REST APIs backend." });
 });
 
 // API routes
