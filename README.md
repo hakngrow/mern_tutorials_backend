@@ -16,6 +16,10 @@ The following table shows an overview of the REST APIs that will be built:
 | GET | api/tutorials?title=[keywords] | Find all tutorials with title contains keywords |
 
 
+### Project Structure
+
+![Project Structure](/public/images/project_structure.jpg)
+
 
 
 
