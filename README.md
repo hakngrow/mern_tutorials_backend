@@ -66,24 +66,9 @@ app.use(express.json());
 // Parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to database - Mongo Atlas
-const db = require("./app/models");
-db.mongoose
-  .connect(db.url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to the database!");
-  })
-  .catch((err) => {
-    console.log("Cannot connect to the database!", err);
-    process.exit();
-  });
-
 // Testing route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to tutorials listing REST APIs backend." });
 });
 
 // API routes
