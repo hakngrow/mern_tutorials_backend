@@ -18,6 +18,16 @@ The following table shows an overview of the REST APIs that will be built:
 
 ### Project Structure
 
+Below is the project structure of our REST APIs.
+
+| Folder/File | Purpose |
+| --- | --- |
+| `server.js` | Main entry point of app |
+| `db.config.js` | Stores database connection parameters |
+| `tutorial.controller.js` | Controller of the app, handles the CRUD operations |
+| `tutorial.model.js` | Schema definition of Tutorial table in database |
+| `tutorial.routes.js` | Mapping of API routes to the controller functions |
+
 ![Project Structure](/public/images/project_structure.jpg)
 
 
