@@ -98,6 +98,17 @@ DB_PASSWORD=<Your DB user password>
 PORT=8080
 ```
 
+To load the `.env` file, as early as possible in our application, we require and configure `dotenv`.
+```
+require("dotenv").config();
+```
+
+'process.env' now has the keys and values we defined in the `.env` file.
+```
+const PORT = process.env.PORT || 8080;
+```
+
+
 
 
 
