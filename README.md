@@ -42,7 +42,12 @@ cd mern_tutorials_backend
 npm init
 ```
 
-3. Setup the Express web application framework<br/>
+3.  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
+```
+npm install express mongoose cors dotenv --save
+```
+
+4. Setup the Express web application framework<br/>
 
 Using your preferred code editor, create a new `server.js` file in the application root folder.
 
