@@ -86,6 +86,8 @@ app.listen(PORT, () => {
 });
 ```
 
+### Using the `dotenv` module
+
 Using `dotenv`, we load configuration parameters in a `.env` file into `process.env`.
 
 Create a `.env` file with the following contents at the root folder (refer to App structure). 
@@ -103,7 +105,7 @@ To load the `.env` file, as early as possible in our application, we require and
 require("dotenv").config();
 ```
 
-'process.env' now has the keys and values we defined in the `.env` file.
+`process.env` now has the keys and values we defined in the `.env` file.
 ```
 const PORT = process.env.PORT || 8080;
 ```
