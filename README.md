@@ -31,23 +31,23 @@ The following table shows an overview of the REST APIs that will be built:
 
 ### Create Node.js App
 
-1. Create a application folder
+#### 1. Create a application folder
 ```
 mkdir mern_tutorials_backend
 cd mern_tutorials_backend
 ```
 
-2. Initialize a Node.js application
+#### 2. Initialize a Node.js application
 ```
 npm init
 ```
 
-3.  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
+#### 3.  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
 ```
 npm install express mongoose cors dotenv --save
 ```
 
-4. Setup the Express web application framework<br/>
+#### 4. Setup the Express web application framework<br/>
 
 Using your preferred code editor, create a new `server.js` file in the application root folder.
 
@@ -84,6 +84,20 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+```
+
+We use the `dotenv` module to store configuration parameters separate from code.  
+
+Using `dotenv`, we load configuration parameters in a `.env` file (at the root folder) into `process.env`.
+
+Create a `.env` file with the following contents at the root folder. 
+```
+# Database credentials
+DB_USER=db_user
+DB_PASSWORD=EbGRGrToP6dmImys
+
+# Web server port
+PORT=8080
 ```
 
 
