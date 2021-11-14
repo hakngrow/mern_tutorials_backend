@@ -86,15 +86,13 @@ app.listen(PORT, () => {
 });
 ```
 
-We use the `dotenv` module to store configuration parameters separate from code.  
+Using `dotenv`, we load configuration parameters in a `.env` file into `process.env`.
 
-Using `dotenv`, we load configuration parameters in a `.env` file (at the root folder) into `process.env`.
-
-Create a `.env` file with the following contents at the root folder. 
+Create a `.env` file with the following contents at the root folder (refer to App structure). 
 ```
 # Database credentials
-DB_USER=db_user
-DB_PASSWORD=EbGRGrToP6dmImys
+DB_USER=<Your DB user name>
+DB_PASSWORD=<Your DB user password>
 
 # Web server port
 PORT=8080
