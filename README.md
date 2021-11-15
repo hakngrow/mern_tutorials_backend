@@ -127,6 +127,13 @@ var corsOptions = {
 app.use(cors(corsOptions));
 ```
 
+### Using the `express` module
+
+We use the `express` web application framework to create the REST APIs.  
+1. Parse requests of type JSON and URL encoded form data
+2. Define a GET route for simple testing
+3. Listen to port 8080 for incoming requests
+
 
 
 
