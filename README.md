@@ -157,4 +157,6 @@ In your new project, create a new cluster.  Be sure to select the free, shared c
 
 ![Select the free, shared cluster](/public/images/select_free_cluster.jpg)
 
+![Select cloud provider and region](/public/images/select_cloud_region.jpg)
+
 
