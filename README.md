@@ -165,4 +165,8 @@ Give your database a meaningful name.
 
 ![Enter cluster name](/public/images/cluster_name.jpg)
 
+It will take a while to provision the database/cluster.  After it is done, it will appear in the database deployments list.
+
+![Database Deployments](/public/images/database_deployments.jpg)
+
 
