@@ -114,7 +114,7 @@ const PORT = process.env.PORT || 8080;
 
 CORS is for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 
-In other words, CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
+In other words, CORS is a security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources. We are using CORS here because we will be creating a front-end to interact with these APIs.
 
 Check this guide to learn more about the [CORS policy](https://www.section.io/engineering-education/what-is-cors-policy/).
 
