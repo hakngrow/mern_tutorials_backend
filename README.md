@@ -83,7 +83,7 @@ app.listen(PORT, () => {
 });
 ```
 
-### Using the `dotenv` module
+#### Using the `dotenv` module
 
 Using `dotenv`, we load configuration parameters in a `.env` file into `process.env`.
 
@@ -107,7 +107,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 ```
 
-### Using the `cors` module
+#### Using the `cors` module
 
 CORS is for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 
@@ -124,20 +124,24 @@ var corsOptions = {
 app.use(cors(corsOptions));
 ```
 
-### Using the `express` module
+#### Using the `express` module
 
 We use the `express` web application framework to create the REST APIs.  In the initial `server.js`, we do the following:
 1. Parse requests of type JSON and URL encoded form data
 2. Define a GET route for simple testing
 3. Listen to port 8080 for incoming requests
 
-### Verify Setup
+#### Verify Setup
 
-To verify the setup so far:
-```
-node server.js
-```
+To verify the setup so far, run `node server.js` at the root folder.
 
+Start your browser, enter the URL http://localhost:8080.
+
+If you see the following JSON response in your browser, the setup is working and we can proceed to work with the database.
+
+![Project Structure](/public/images/test.jpg)
+
+### 2. MongoDB Setup
 
 
 
