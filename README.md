@@ -133,10 +133,15 @@ We use the `express` web application framework to create the REST APIs.  In the 
 
 ### Verify Setup
 
-To verify the setup so far:
-```
-node server.js
-```
+To verify the setup so far, run `node server.js` at the root folder.
+
+Start your browser, enter the URL http://localhost:8080.
+
+If you see the following JSON response,  our setup is working and we can proceed to work with the database.
+
+![Project Structure](/public/images/test.jpg)
+
+
 
 
 
