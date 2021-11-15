@@ -163,6 +163,6 @@ You can then select your preferred cloud provider and choose a location near to 
 
 Give your database a meaningful name.
 
-![Enter cluster name](/public/images/name_cluster.jpg)
+![Enter cluster name](/public/images/cluster_name.jpg)
 
 
