@@ -169,4 +169,7 @@ It will take a while to provision the database/cluster.  After it is done, it wi
 
 ![Database Deployments](/public/images/database_deployments.jpg)
 
+Click on the `Connect` button
+
+![Connect application](/public/images/connect_application.jpg)
 
