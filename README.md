@@ -145,8 +145,12 @@ If you see the following JSON response in your browser, the setup is working and
 
 We will be using the [MongoDB Atlas](https://www.mongodb.com) the cloud-hosted MongoDB service.  Head over to their URL and create a free account. 
 
-After your account is created, you can proceed to create an organization.  Give your organization a name. Select MongoDB Atlas as the cloud service.  After which, you will be prompted to add members and set permissions.  Since you are the only user, ignore this part and proceed to create the organization.
+After your account is created, you can proceed to create an organization.  Give your organization a name.  Select MongoDB Atlas as the cloud service.  After which, you will be prompted to add members and set permissions.  Since you are the only user, ignore this part and proceed to create the organization.
 
 ![Create an organization](/public/images/create_organization.jpg)
+
+Under your new organization, create a new project.  Give your project a name.
+
+![Create a project](/public/images/create_project.jpg)
 
 
