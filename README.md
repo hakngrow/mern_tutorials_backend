@@ -76,9 +76,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to tutorials listing REST APIs backend." });
 });
 
-// API routes
-require("./app/routes/tutorial.routes")(app);
-
 // Set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
@@ -129,7 +126,7 @@ app.use(cors(corsOptions));
 
 ### Using the `express` module
 
-We use the `express` web application framework to create the REST APIs.  
+We use the `express` web application framework to create the REST APIs.  In the initial `server.js`, we do the following:
 1. Parse requests of type JSON and URL encoded form data
 2. Define a GET route for simple testing
 3. Listen to port 8080 for incoming requests
