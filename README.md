@@ -141,7 +141,6 @@ If you see the following JSON response in your browser, the setup is working and
 
 ![Project Structure](/public/images/test.jpg)
 
-
 ### 2. MongoDB Setup
 
 
