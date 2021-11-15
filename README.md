@@ -110,6 +110,14 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 ```
 
+### Using the `cors` module
+
+CORS is for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
+
+In other words, CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
+
+Check this guide to learn more about the [CORS policy](https://www.section.io/engineering-education/what-is-cors-policy/).
+
 
 
 
