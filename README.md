@@ -149,7 +149,7 @@ After your account is created, you can proceed to create an organization.  Give 
 
 ![Create an organization](/public/images/create_organization.jpg)
 
-Under your new organization, create a new project.  Give your project a name.
+Under your new organization, create a new project.  Give your project a name.  Again ignore the prompt to add members and set permissions, and create the project.
 
 ![Create a project](/public/images/create_project.jpg)
 
