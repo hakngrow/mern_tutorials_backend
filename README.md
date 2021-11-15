@@ -153,10 +153,20 @@ Under your new organization, create a new project.  Give your project a name.  A
 
 ![Create a project](/public/images/create_project.jpg)
 
-In your new project, create a new cluster.  Be sure to select the free, shared cluster, or else, you will have to pay for it.  You can select your preferred cloud provider and choose a location near to where you are.
+In your new project, create a new database.  Be sure to select the free and shared option, or else, you will have to pay for it.
 
 ![Select the free, shared cluster](/public/images/select_free_cluster.jpg)
 
+You can then select your preferred cloud provider and choose a location near to where you are.
+
 ![Select cloud provider and region](/public/images/select_cloud_region.jpg)
+
+Give your database a meaningful name.
+
+![Enter cluster name](/public/images/cluster_name.jpg)
+
+It will take a while to provision the database/cluster.  After it is done, it will appear in the database deployments list.
+
+![Database Deployments](/public/images/database_deployments.jpg)
 
 
