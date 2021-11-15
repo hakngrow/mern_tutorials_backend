@@ -131,6 +131,12 @@ We use the `express` web application framework to create the REST APIs.  In the 
 2. Define a GET route for simple testing
 3. Listen to port 8080 for incoming requests
 
+### Verify Setup
+
+To verify the setup so far:
+```
+node server.js
+```
 
 
 
