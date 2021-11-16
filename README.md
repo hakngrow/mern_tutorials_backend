@@ -220,7 +220,7 @@ The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tuto
 
 #### 3.1 Setup database config
 
-In the root folder, create a `config` folder (refer to the [app structure](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#rest-apis-app-structure)).  In the `config` folder create a database config file `db.config.js` with the following:
+In the `app` folder, create a `config` folder (refer to the [app structure](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#rest-apis-app-structure)).  In the `config` folder create a database config file `db.config.js` with the following:
 
 ```
 module.exports = {
@@ -230,7 +230,27 @@ module.exports = {
 
 Note that the values of `process.env.DB_USER`, `process.env.DB_PASSWORD` and `process.env.DB_NAME` are stored in the `.env` file we created in the [`dotenv`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#15-using-the-dotenv-module) section.
 
-#### 3.2 Define `Mongoose` and our tutorial model
+#### 3.2 Define `Mongoose`
+
+In the `app` folder, create a `models` folder.  In the `models` folder, create a `index.js` file with the following:
+
+```
+const dbConfig = require("../config/db.config.js");
+
+const mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
+
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+db.tutorials = require("./tutorial.model.js")(mongoose);
+
+module.exports = db;
+```
+
+
+
 
 
 
