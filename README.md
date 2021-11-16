@@ -212,6 +212,7 @@ In summary, these are the following steps needed to get MongoDB Atlas ready for 
 6. Create a database user
 7. Copy the connection string
 
+### 3. Connecting Node.js to MongoDB
 
 
 
