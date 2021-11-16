@@ -189,7 +189,7 @@ To connect our `node.js` application to the MongoDB Atlas, we need a connection 
 
 ![Copy your connection string](/public/images/connection_string.jpg)
 
-Make sure that `node.js` is selected for the driver and `4.0 or later` for the version.  The format of the connection string will be similar to the following 
+Make sure that `node.js` is selected for the driver and `4.0 or later` for the version.  The format of the connection string will be similar to the one below.  You will have to replace the `<user name>`, `<password>` and `<database>` sections with the values that you used earlier when creating the database. 
 
 ```
 mongodb+srv://<user name>:<password>@mern.cqtzf.mongodb.net/<database name>?retryWrites=true&w=majority
