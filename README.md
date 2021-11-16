@@ -177,7 +177,12 @@ Give your database a meaningful name.  A collection in MongoDB is like a table i
 
 ![Name your database](/public/images/database_name.jpg)
 
-After creating the database and collection, we need to connect to the database for our APIs to perform CRUD operations.
+After creating the database and collection, we need to connect to the database for our APIs to perform CRUD operations.  Click on the `Overview` tab and the `Connect` button.
+
+![Connect to your database](/public/images/connect_button.jpg)
+
+
+
 Click on the `Connect` button to learn how to connect to the database.
 
 ![Connect application](/public/images/connect_application.jpg)
