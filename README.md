@@ -173,7 +173,9 @@ Click on the `Browse Collections` and then the `Add My Own Data` button to start
 
 ![Create a database](/public/images/create_database.jpg)
 
+Give your database a meaningful name.
 
+![Name your database](/public/images/database_name.jpg)
 
 
 Click on the `Connect` button to learn how to connect to the database.
