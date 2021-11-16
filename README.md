@@ -161,13 +161,22 @@ You can then select your preferred cloud provider and choose a location near to 
 
 ![Select cloud provider and region](/public/images/select_cloud_region.jpg)
 
-Give your database a meaningful name.
+Give your cluster a meaningful name.
 
 ![Enter cluster name](/public/images/cluster_name.jpg)
 
-It will take a while to provision the database/cluster.  After it is done, it will appear in the database deployments list.
+It will take a while to provision the new cluster.  After it is done, it will appear in the database deployments list.
 
 ![Database Deployments](/public/images/database_deployments.jpg)
+
+Click on the `Browse Collections` and then the `Add My Own Data` button to start creating a database. 
+
+![Create a database](/public/images/create_database.jpg)
+
+Give your database a meaningful name.
+
+![Name your database](/public/images/database_name.jpg)
+
 
 Click on the `Connect` button to learn how to connect to the database.
 
