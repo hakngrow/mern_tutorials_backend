@@ -90,6 +90,7 @@ Using `dotenv`, we load configuration parameters in a `.env` file into `process.
 Create a `.env` file with the following contents at the root folder (refer to App structure). 
 ```
 # Database credentials
+DB_NAME=<Your DB name>
 DB_USER=<Your DB user name>
 DB_PASSWORD=<Your DB user password>
 
