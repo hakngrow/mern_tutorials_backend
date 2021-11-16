@@ -179,9 +179,11 @@ Give your database a meaningful name.  A collection in MongoDB is like a table i
 
 After creating the database and collection, we need to create a database user account that our APIs will use to access the database.  Click on `Database Access` on the navigation side bar.  Click on the `ADD NEW DATABASE USER` button.
 
-![database_access](/public/images/database_access.jpg)
+![Grant database access](/public/images/database_access.jpg)
 
 Select `Password` for Authentication Method, enter your desired user name and password, select `Read and write to any database` for Database User Privileges. Click on the `Add User` button. 
+
+![Add a database user](/public/images/create_user.jpg)
 
 Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on the `Overview` tab and the `Connect` button.
 
