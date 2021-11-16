@@ -249,6 +249,10 @@ db.tutorials = require("./tutorial.model.js")(mongoose);
 module.exports = db;
 ```
 
+We `require` the database config file and 'mongoose' module.  We then store the `mongoose` module, the connection string, and the tutorial model in an object, and expose it via `exports`.  We will create the tutorial model in the next section
+
+#### 3.3 Tutorial model
+
 
 
 
