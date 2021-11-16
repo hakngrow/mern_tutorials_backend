@@ -169,9 +169,10 @@ It will take a while to provision the new cluster.  After it is done, it will ap
 
 ![Database Deployments](/public/images/database_deployments.jpg)
 
-Click on the `Browse Collections` button to create a database.
+Click on the `Browse Collections` and then the `Add My Own Data` button to start creating a database. 
 
 ![Create a database](/public/images/create_database.jpg)
+
 
 
 
