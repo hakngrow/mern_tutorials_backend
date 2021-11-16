@@ -215,5 +215,5 @@ In summary, these are the following steps needed to get MongoDB Atlas ready for 
 
 ### 3. Connecting Node.js to MongoDB
 
-The `mongoose` module (installed earlier) is an MongoDB object modelling tool for `node.js`.  It allows our REST APIs to perform CRUD opertions on the MongoDB database. 
+The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#3--install-the-necessary-modules-express-mongoose-cors-dotenv)) is an MongoDB object modelling tool for `node.js`.  It allows our REST APIs to perform CRUD opertions on the MongoDB database. 
 
