@@ -249,9 +249,34 @@ db.tutorials = require("./tutorial.model.js")(mongoose);
 module.exports = db;
 ```
 
-We `require` the database config file and 'mongoose' module.  We then store the `mongoose` module, the connection string, and the tutorial model in an object, and expose it via `exports`.  We will create the tutorial model in the next section
+We `require` the database config file and the 'mongoose' module.  We then store the `mongoose` module, the connection string, and the tutorial model in an object, and expose it via `exports`.  We will create the tutorial model in the next section
 
 #### 3.3 Tutorial model
+
+In the `models` folder, create a `tutorial.model.js` file with the following:
+
+```
+module.exports = mongoose => {
+  var schema = mongoose.Schema(
+    {
+      title: String,
+      description: String,
+      published: Boolean
+    },
+    { timestamps: true }
+  );
+
+  schema.method("toJSON", function() {
+    const { __v, _id, ...object } = this.toObject();
+    object.id = _id;
+    return object;
+  });
+
+  const Tutorial = mongoose.model("tutorial", schema);
+  
+  return Tutorial;
+};
+```
 
 
 
