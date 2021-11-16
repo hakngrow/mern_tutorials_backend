@@ -181,9 +181,12 @@ After creating the database and collection, we need to connect to the database f
 
 ![Connect to your database](/public/images/connect_button.jpg)
 
-
-
-Click on the `Connect` button to learn how to connect to the database.
+Click on the `Connect your application` button to learn how to connect to the database.
 
 ![Connect application](/public/images/connect_application.jpg)
+
+To connect our `node.js` application to the MongoDB Atlas, we need a connection string.
+
+![Copy your connection string](/public/images/connection_string.jpg)
+
 
