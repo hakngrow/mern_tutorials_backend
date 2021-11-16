@@ -185,7 +185,11 @@ Select `Password` for Authentication Method, enter your desired user name and pa
 
 ![Add a database user](/public/images/create_user.jpg)
 
-Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on the `Overview` tab and the `Connect` button.
+Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on `Databases` on the left navigation side bar.  Click on the `Connect` button.
+
+![Database Deployments](/public/images/database_deployments.jpg)
+
+Click on the `Overview` tab and the `Connect` button.
 
 ![Connect to your database](/public/images/connect_button.jpg)
 
