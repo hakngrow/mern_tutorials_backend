@@ -185,8 +185,14 @@ Click on the `Connect your application` button to learn how to connect to the da
 
 ![Connect application](/public/images/connect_application.jpg)
 
-To connect our `node.js` application to the MongoDB Atlas, we need a connection string.  A connection string is used to identify the server instance and database to connect to.  Also specified in the string, are connection parameters like the login details and driver.  To learn more about connection strings, [click here](https://www.sciencedirect.com/topics/computer-science/connection-string).
+To connect our `node.js` application to the MongoDB Atlas, we need a connection string.  A connection string is used to identify the server instance and database to connect to.  Also specified in the string, are connection parameters like the login details and driver.  To learn more about connection strings, click [here](https://www.sciencedirect.com/topics/computer-science/connection-string).
 
 ![Copy your connection string](/public/images/connection_string.jpg)
+
+Make sure that `node.js` is selected for the driver and `4.0 or later` for the version.  The format of the connection string will be similar to the following 
+
+```
+mongodb+srv://<user name>:<password>@mern.cqtzf.mongodb.net/<database name>?retryWrites=true&w=majority
+```
 
 
