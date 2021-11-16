@@ -230,4 +230,8 @@ module.exports = {
 
 Note that the values of `process.env.DB_USER`, `process.env.DB_PASSWORD` and `process.env.DB_NAME` are stored in the `.env` file we created in the [`dotenv`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#15-using-the-dotenv-module) section.
 
+#### 3.2 Define `Mongoose` and our tutorial model
+
+
+
 
