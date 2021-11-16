@@ -181,11 +181,9 @@ After creating the database and collection, we need to create a database user ac
 
 ![database_access](/public/images/database_access.jpg)
 
+Select `Password` for Authentication Method, enter your desired user name and password, select `Read and write to any database` for Database User Privileges. Click on the `Add User` button. 
 
-
-
-
-we need to connect to the database for our APIs to perform CRUD operations.  Click on the `Overview` tab and the `Connect` button.
+Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on the `Overview` tab and the `Connect` button.
 
 ![Connect to your database](/public/images/connect_button.jpg)
 
