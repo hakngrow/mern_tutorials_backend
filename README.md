@@ -16,7 +16,7 @@ The following table shows an overview of the REST APIs that will be built:
 | GET | api/tutorials?title=[keywords] | Find all tutorials with title contains keywords |
 
 
-### REST APIs App Structure
+#### REST APIs App Structure
 
 ![Project Structure](/public/images/project_structure.jpg)
 
@@ -29,25 +29,25 @@ The following table shows an overview of the REST APIs that will be built:
 | `tutorial.routes.js` | Mapping of API routes to the controller functions |
 
 
-### Create Node.js App
+### 1. Create Node.js App
 
-#### 1. Create a application folder
+#### 1.1 Create a application folder
 ```
 mkdir mern_tutorials_backend
 cd mern_tutorials_backend
 ```
 
-#### 2. Initialize a Node.js application
+#### 1.2 Initialize a Node.js application
 ```
 npm init
 ```
 
-#### 3.  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
+#### 1.3  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
 ```
 npm install express mongoose cors dotenv --save
 ```
 
-#### 4. Setup the Express web application framework<br/>
+#### 1.4 Setup the Express web application framework<br/>
 
 Using your preferred code editor, create a new `server.js` file in the application root folder.
 
@@ -83,7 +83,7 @@ app.listen(PORT, () => {
 });
 ```
 
-#### Using the `dotenv` module
+#### 1.5 Using the `dotenv` module
 
 Using `dotenv`, we load configuration parameters in a `.env` file into `process.env`.
 
@@ -107,7 +107,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 ```
 
-#### Using the `cors` module
+#### 1.6 Using the `cors` module
 
 CORS is for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 
@@ -124,14 +124,14 @@ var corsOptions = {
 app.use(cors(corsOptions));
 ```
 
-#### Using the `express` module
+#### 1.7 Using the `express` module
 
 We use the `express` web application framework to create the REST APIs.  In the initial `server.js`, we do the following:
 1. Parse requests of type JSON and URL encoded form data
 2. Define a GET route for simple testing
 3. Listen to port 8080 for incoming requests
 
-#### Verify Setup
+#### 1.8 Verify Setup
 
 To verify the setup so far, run `node server.js` at the root folder.
 
@@ -216,4 +216,9 @@ In summary, these are the following steps needed to get MongoDB Atlas ready for 
 ### 3. Connecting Node.js to MongoDB
 
 The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#3--install-the-necessary-modules-express-mongoose-cors-dotenv)) is an MongoDB object modelling tool for `node.js`.  It allows our REST APIs to perform CRUD opertions on the MongoDB database. 
+
+#### 3.1 Setup database config
+
+In the root folder, create a `config` folder.  In the `config` folder create a database config file `db.config.js`.
+
 
