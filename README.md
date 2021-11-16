@@ -219,6 +219,6 @@ The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tuto
 
 #### 3.1 Setup database config
 
-In the root folder, create a `config` folder.  In the `config` folder create a database config file `db.config.js`.
+In the root folder, create a `config` folder (refer to the [app structure](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#rest-apis-app-structure)).  In the `config` folder create a database config file `db.config.js`.
 
 
