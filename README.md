@@ -189,10 +189,6 @@ Next, we need to connect to the database for our APIs to perform CRUD operations
 
 ![Database Deployments](/public/images/database_deployments.jpg)
 
-Click on the `Overview` tab and the `Connect` button.
-
-![Connect to your database](/public/images/connect_button.jpg)
-
 Click on the `Connect your application` button to learn how to connect to the database.
 
 ![Connect application](/public/images/connect_application.jpg)
