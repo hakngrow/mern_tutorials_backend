@@ -284,7 +284,7 @@ module.exports = mongoose => {
 };
 ```
 
-The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the MongoDB setup.
+The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the [MongoDB setup](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#24-create-a-database-and-collection).
 
 
 
