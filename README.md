@@ -266,17 +266,15 @@ module.exports = mongoose => {
     { timestamps: true }
   );
 
-  schema.method("toJSON", function() {
-    const { __v, _id, ...object } = this.toObject();
-    object.id = _id;
-    return object;
-  });
-
   const Tutorial = mongoose.model("tutorial", schema);
   
   return Tutorial;
 };
 ```
+
+The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the MongoDB setup.
+
+
 
 
 
