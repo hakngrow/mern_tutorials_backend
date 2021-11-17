@@ -146,15 +146,21 @@ If you see the following JSON response in your browser, the setup is working and
 
 We will be using the [MongoDB Atlas](https://www.mongodb.com) the cloud-hosted MongoDB service.  Head over to their URL and create a free account. 
 
+#### 2.1 Create an organization
+
 After your account is created, you can proceed to create an organization.  Give your organization a name.  Select MongoDB Atlas as the cloud service.  After which, you will be prompted to add members and set permissions.  Since you are the only user, ignore this part and proceed to create the organization.
 
 ![Create an organization](/public/images/create_organization.jpg)
+
+#### 2.2 Create a project
 
 Under your new organization, create a new project.  Give your project a name.  Again ignore the prompt to add members and set permissions, and create the project.
 
 ![Create a project](/public/images/create_project.jpg)
 
-In your new project, create a new database.  Be sure to select the free and shared option, or else, you will have to pay for it.
+#### 2.3 Create a cluster
+
+In your new project, create a new cluster.  Be sure to select the free and shared option, or else, you will have to pay for it.
 
 ![Select the free, shared cluster](/public/images/select_free_cluster.jpg)
 
@@ -170,6 +176,8 @@ It will take a while to provision the new cluster.  After it is done, it will ap
 
 ![Database Deployments](/public/images/database_deployments.jpg)
 
+#### 2.4 Create a database and collection
+
 Click on the `Browse Collections` and then the `Add My Own Data` buttons to start creating a database. 
 
 ![Create a database](/public/images/create_database.jpg)
@@ -178,6 +186,8 @@ Give your database a meaningful name.  A collection in MongoDB is like a table i
 
 ![Name your database](/public/images/database_name.jpg)
 
+#### 2.5 Create a database user
+
 After creating the database and collection, we need to create a database user account that our APIs will use to access the database.  Click on `Database Access` on the navigation side bar.  Click on the `ADD NEW DATABASE USER` button.
 
 ![Grant database access](/public/images/database_access.jpg)
@@ -185,6 +195,8 @@ After creating the database and collection, we need to create a database user ac
 Select `Password` for Authentication Method, enter your desired user name and password, select `Read and write to any database` for Database User Privileges. Click on the `Add User` button. 
 
 ![Add a database user](/public/images/create_user.jpg)
+
+#### 2.6 Copy connection string
 
 Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on `Databases` on the left navigation side bar.  Click on the `Connect` button.
 
