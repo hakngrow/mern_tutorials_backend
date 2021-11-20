@@ -341,6 +341,8 @@ In doing so, inserting a tutorial document produces the following object:
 }
 ```
 
+At this point, the `node.js` application is basically linked, via `mongoose`, to the MongoDB.  We can proceed to create the controller that implements the CRUD operations using the `mongoose` model.
+
 
 
 
