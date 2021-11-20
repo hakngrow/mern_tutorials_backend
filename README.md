@@ -424,6 +424,35 @@ exports.create = (req, res) => {
 };
 ```
 
+#### 4.2 Retrieving tutorials by `title`
+
+```
+// Retrieve all tutorials from the database.
+exports.findAll = (req, res) => {
+  const title = req.query.title;
+  var condition = title
+    ? { title: { $regex: new RegExp(title), $options: "i" } }
+    : {};
+
+  Tutorial.find(condition)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+};
+```
+
+We use `req.query.title` to get the query string from the HTML request and set it as a condition for `findAll()` method.  The condition is defined as a regular expression (`$regex`).  The `$options` set to `"i"` means the search will be case-insensitive.
+
+```
+{ title: { $regex: new RegExp(title), $options: "i" } }
+```
+
 
 
 
