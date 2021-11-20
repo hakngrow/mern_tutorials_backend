@@ -312,15 +312,33 @@ module.exports = mongoose => {
     { timestamps: true }
   );
 
+  // Override toJSON function
   schema.method("toJSON", function() {
+    // Deconstruct into custom object that excludes auto-generated fields __v and _id
     const { __v, _id, ...object } = this.toObject();
+
+    // Create new id field with value of primary key _id 
     object.id = _id;
+
     return object;
   });
 
   const Tutorial = mongoose.model("tutorial", schema);
+  
   return Tutorial;
 };
+```
+
+In doing so, inserting a tutorial document produces the following object:
+```
+{
+  "id": "5e363b135036a835ac1a7da8",
+  "title": "Javascript Tutorial",
+  "description": "Description for tutorial",
+  "published": true,
+  "createdAt": "2020-02-02T02:59:31.198Z",
+  "updatedAt": "2020-02-02T02:59:31.198Z"
+}
 ```
 
 
