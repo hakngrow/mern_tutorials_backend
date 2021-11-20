@@ -286,7 +286,7 @@ module.exports = mongoose => {
 
 The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the [MongoDB setup](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#24-create-a-database-and-collection).  The model can be liken to the table definition of a traditional RDBMS.  
 
-Inserting a tutorial via Mongoose will produce the following document object.  A document is like a row or record in traditional RDBMS.  Because we included `{ timestamps: true }` in the schema, the `createdAt` and `updatedAt` fields are auto-generated and updated. The `_id` and `__v` field are auto-generated primary key and version key respectively.
+Inserting a tutorial via Mongoose will produce the following document object.  A document is like a row or record in traditional RDBMS.  Because we included `{ timestamps: true }` in the schema, the `createdAt` and `updatedAt` fields are auto-generated and updated. The `_id` and `__v` field are the auto-generated primary key and version key respectively.
 
 ```
 {
@@ -298,6 +298,29 @@ Inserting a tutorial via Mongoose will produce the following document object.  A
   "updatedAt": "2020-02-02T02:59:31.198Z",
   "__v": 0
 }
+```
+
+In our front-end later, we will be using a primary key `id` field instead of `_id`.  As such, we have to override the `toJSON` method that maps the default object to a custom object.  The `mongoose` model can be modified as follows:
+```
+module.exports = mongoose => {
+  var schema = mongoose.Schema(
+    {
+      title: String,
+      description: String,
+      published: Boolean
+    },
+    { timestamps: true }
+  );
+
+  schema.method("toJSON", function() {
+    const { __v, _id, ...object } = this.toObject();
+    object.id = _id;
+    return object;
+  });
+
+  const Tutorial = mongoose.model("tutorial", schema);
+  return Tutorial;
+};
 ```
 
 
