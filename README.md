@@ -284,7 +284,21 @@ module.exports = mongoose => {
 };
 ```
 
-The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the [MongoDB setup](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#24-create-a-database-and-collection).  The model can be liken to the table definition of a traditional RDBMS.
+The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the [MongoDB setup](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#24-create-a-database-and-collection).  The model can be liken to the table definition of a traditional RDBMS.  
+
+Inserting a tutorial via Mongoose will produce the following document object.  A document is like a row or record in traditional RDBMS.  Because we included `{ timestamps: true }` in the schema, the `createdAt` and `updatedAt` fields are auto-generated and updated. The `_id` and `__v` field are auto-generated primary key and version key respectively.
+
+```
+{
+  "_id": "5e363b135036a835ac1a7da8",
+  "title": "Javascript Tutorial",
+  "description": "Description for tutorial",
+  "published": true,
+  "createdAt": "2020-02-02T02:59:31.198Z",
+  "updatedAt": "2020-02-02T02:59:31.198Z",
+  "__v": 0
+}
+```
 
 
 
