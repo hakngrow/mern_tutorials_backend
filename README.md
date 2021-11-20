@@ -226,7 +226,7 @@ In summary, these are the following steps needed to get MongoDB Atlas ready for 
 7. Copy the connection string
 
 
-### 3. Connecting Node.js to MongoDB
+### 3. Connect Node.js to MongoDB
 
 The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tutorials_backend#13--install-the-necessary-modules-express-mongoose-cors-dotenv)) is an MongoDB object modelling tool for `node.js`.  It allows our REST APIs to perform CRUD opertions on the MongoDB database. 
 
@@ -344,7 +344,7 @@ In doing so, inserting a tutorial document produces the following object:
 At this point, the `node.js` application is basically linked, via `mongoose`, to the MongoDB.  We can proceed to create the controller that implements the CRUD operations using the `mongoose` model.
 
 
-### 4. Creating the Controller
+### 4. Create the Controller
 
 In the `app` folder, create a `controllers` folder.  In the `controllers` folder, create a `tutorial.controller.js` file with the following CRUD functions:
 - create:  to create a new tutorial
@@ -569,7 +569,7 @@ exports.findAllPublished = (req, res) => {
 ```
 
 
-### 5. Define Routes
+### 5. Define the API Routes
 
 
 
