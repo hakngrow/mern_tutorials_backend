@@ -514,7 +514,7 @@ exports.delete = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe tutorial was not found!`,
+          message: `Cannot delete tutorial with id=${id}. Maybe tutorial was not found!`,
         });
       } else {
         res.send({
@@ -529,6 +529,47 @@ exports.delete = (req, res) => {
     });
 };
 ```
+
+#### 4.6 Deleting all tutorials
+
+```
+// Delete all tutorials from the database.
+exports.deleteAll = (req, res) => {
+    Tutorial.deleteMany({})
+    .then(data => {
+      res.send({
+        message: `${data.deletedCount} Tutorials were deleted successfully!`
+      });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while removing all tutorials."
+      });
+    });
+};
+```
+
+#### 4.7 Find all published tutorials
+
+```
+// Find all published tutorials
+exports.findAllPublished = (req, res) => {
+    Tutorial.find({ published: true })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
+```
+
+
+### 5. Define Routes
 
 
 
