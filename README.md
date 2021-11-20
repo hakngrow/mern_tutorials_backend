@@ -355,6 +355,8 @@ In the `app` folder, create a `controllers` folder.  In the `controllers` folder
 - deleteAll: to remove all tutorials
 - findAllPublished: to find all tutorials by `title`
 
+By requiring the `models` folder, we load the `index.js` from the `models` folder, which in turn loads the `tutorial` model defined previously.
+
 ```
 const db = require("../models");
 
@@ -386,6 +388,39 @@ exports.deleteAll = (req, res) => {
 
 // Find all published tutorials
 exports.findAllPublished = (req, res) => {
+};
+```
+
+#### 4.1 Create a new tutorial
+
+```
+// Create and save a new tutorial
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body.title) {
+    res.status(400).send({ message: "Content cannot be empty!" });
+    return;
+  }
+
+  // Create a tutorial
+  const tutorial = new Tutorial({
+    title: req.body.title,
+    description: req.body.description,
+    published: req.body.published ? req.body.published : false,
+  });
+
+  // Save tutorial in the database
+  tutorial
+    .save(tutorial)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the Tutorial.",
+      });
+    });
 };
 ```
 
