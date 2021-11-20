@@ -344,6 +344,18 @@ In doing so, inserting a tutorial document produces the following object:
 At this point, the `node.js` application is basically linked, via `mongoose`, to the MongoDB.  We can proceed to create the controller that implements the CRUD operations using the `mongoose` model.
 
 
+### 4. Creating the Controller
+
+In the `app` folder, create a `controllers` folder.  In the `controllers` folder, create a `tutorial.controller.js` file with the following CRUD functions:
+- create:  to create a new tutorial
+- findAll: to retrieve all tutorials
+- findOne: to find a tutorial by `id`
+- update: to update a tutorial by `id`
+- delete: to remove a tutorial by `id`
+- deleteAll: to remove all tutorials
+- findAllPublished: to find all tutorials by `title`
+
+
 
 
 
