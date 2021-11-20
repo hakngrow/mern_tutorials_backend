@@ -355,7 +355,7 @@ In the `app` folder, create a `controllers` folder.  In the `controllers` folder
 - deleteAll: to remove all tutorials
 - findAllPublished: to find all tutorials by `title`
 
-By requiring the `models` folder, we load the `index.js` from the `models` folder, which in turn loads the `tutorial` model defined previously.
+By requiring the `models` folder, we load the [`index.js`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#32-define-mongoose) from the `models` folder, which in turn loads the `tutorial` model defined previously.
 
 ```
 const db = require("../models");
