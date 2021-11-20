@@ -418,7 +418,7 @@ exports.create = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial.",
+          err.message || "Some error occurred while creating the tutorial.",
       });
     });
 };
@@ -447,11 +447,89 @@ exports.findAll = (req, res) => {
 };
 ```
 
-We use `req.query.title` to get the query string from the HTML request and set it as a condition for `findAll()` method.  The condition is defined as a regular expression (`$regex`).  The `$options` set to `"i"` means the search will be case-insensitive.
+We use `req.query.title` to get the query string from the HTML request and set it as a condition for `findAll()` method.  The condition is defined as a regular expression (`$regex`).  The `$options` set to `"i"` means the match will be case-insensitive.
 
 ```
 { title: { $regex: new RegExp(title), $options: "i" } }
 ```
+
+#### 4.3 Retrieving a single tutorial
+
+```
+// Find a single tutorial with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  Tutorial.findById(id)
+    .then((data) => {
+      if (!data)
+        res.status(404).send({ message: "Not found tutorial with id " + id });
+      else res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving tutorial with id=" + id });
+    });
+};
+```
+
+#### 4.4 Updating a tutorial
+
+```
+// Update a tutorial by the id in the request
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!",
+    });
+  }
+
+  const id = req.params.id;
+
+  Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update tutorial with id=${id}. Maybe tutorial was not found!`,
+        });
+      } else res.send({ message: "Tutorial was updated successfully." });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error updating tutorial with id=" + id,
+      });
+    });
+};
+```
+
+#### 4.5 Deleting a tutorial
+
+```
+// Delete a tutorial with the specified id in the request
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  Tutorial.findByIdAndRemove(id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot delete Tutorial with id=${id}. Maybe tutorial was not found!`,
+        });
+      } else {
+        res.send({
+          message: "Tutorial was deleted successfully!",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Could not delete tutorial with id=" + id,
+      });
+    });
+};
+```
+
 
 
 
