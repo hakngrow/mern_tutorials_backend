@@ -571,17 +571,74 @@ exports.findAllPublished = (req, res) => {
 
 ### 5. Define the API Routes
 
-Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  
 
 | Route | Method | Function |
 | --- | ---| --- |
-| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
+| `/api/tutorials` |  GET | [Retrieve all tutorials by `title`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
 | `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
 | `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
 | `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#43-retrieve-a-tutorial) |
 | `/api/tutorials/:id` | PUT | [Updates a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#44-update-a-tutorial) |
 | `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#45-delete-a-tutorial) |
 | `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#47-find-all-published-tutorials) |
+
+In the `app` folder, create a `routes` folder. In the `routes` folder, create a `tutorial.routes.js` file with the following:
+
+```
+module.exports = app => {
+    const tutorials = require("../controllers/tutorial.controller.js");
+  
+    var router = require("express").Router();
+  
+    // Create a new tutorial
+    router.post("/", tutorials.create);
+  
+    // Retrieve all tutorials
+    router.get("/", tutorials.findAll);
+  
+    // Retrieve all published tutorials
+    router.get("/published", tutorials.findAllPublished);
+  
+    // Retrieve a single tutorial with id
+    router.get("/:id", tutorials.findOne);
+  
+    // Update a tutorial with id
+    router.put("/:id", tutorials.update);
+  
+    // Delete a tutorial with id
+    router.delete("/:id", tutorials.delete);
+  
+    // Create a new tutorial
+    router.delete("/", tutorials.deleteAll);
+  
+    app.use('/api/tutorials', router);
+  };
+```
+
+We define our routing rules using the `express.js` framework.  Note how `express` routing is done using the path, HTTP method and route parameters.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+
+We require the `express` module and `tutorial.controller.js` that we defined [earlier](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#4-create-the-controller).  To make these API routes work, we need to register them with the app by requiring it in `server.js`.
+
+```
+...
+
+// API routes
+require("./app/routes/tutorial.routes")(app);
+
+...
+```
+
+### 6. Test the APIs
+
+Type `node server.js` at the root folder to run the `node.js` app. 
+
+Next we will be using [Postman](https://www.postman.com/) to test the APIs we have created.  Postman is an API platform that makes it easy for developers to create, share, test and document APIs. This is done by allowing users to create and save simple and complex HTTP/S requests, as well as read their responses.  Download and sign up for a free account if you have not done so.
+
+#### 6.1 Create a new tutorial using `POST /api/tutorials` API
+
+
+
 
 
 
