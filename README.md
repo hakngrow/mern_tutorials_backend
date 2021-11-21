@@ -637,6 +637,8 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 #### 6.1 Create a new tutorial using `POST /api/tutorials` API
 
+![Create a tutorial](/public/images/test_create_tutorial.jpg)
+
 
 
 
