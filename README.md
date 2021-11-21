@@ -576,10 +576,10 @@ exports.findAllPublished = (req, res) => {
 | `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
 | `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
 | `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
-| `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-retrieve-a-tutorial) |
-| `/api/tutorials/:id` | PUT | [Updates a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-update-a-tutorial) |
-| `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-a-tutorial) |
-| `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-find-all-published-tutorials) |
+| `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#43-retrieve-a-tutorial) |
+| `/api/tutorials/:id` | PUT | [Updates a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#44-update-a-tutorial) |
+| `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#45-delete-a-tutorial) |
+| `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#47-find-all-published-tutorials) |
 
 
 
