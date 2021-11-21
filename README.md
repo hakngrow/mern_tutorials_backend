@@ -637,6 +637,13 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 #### 6.1 Create a new tutorial using `POST /api/tutorials` API
 
+![Create a tutorial](/public/images/test_create_tutorial.jpg)
+
+6.1.1 Select the `POST` HTTP method.
+
+6.1.2 Enter `localhost:8080/api/tutorials` as the request URL. `localhost` refers to the computer on which the `node.js` app is running.  `8080` refers to the port that the `node.js` app was configured to listen to. `/api/tutorials` together with the `POST` HTTP method invokes the API to create a tutorial.
+
+
 
 
 
