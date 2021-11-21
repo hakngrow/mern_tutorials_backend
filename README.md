@@ -618,7 +618,7 @@ module.exports = app => {
 
 We define our routing rules using the `express.js` framework.  Note how `express` routing is done using the path, HTTP method and route parameters.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
 
-We require the `express` module and `tutorial.controller.js` that we defined [earlier]().  To make these API routes work, we need to register them with the app by requiring it in `server.js`.
+We require the `express` module and `tutorial.controller.js` that we defined [earlier](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#4-create-the-controller).  To make these API routes work, we need to register them with the app by requiring it in `server.js`.
 
 ```
 ...
@@ -630,6 +630,12 @@ require("./app/routes/tutorial.routes")(app);
 ```
 
 ### 6. Test the APIs
+
+Type `node server.js` at the root folder to run the `node.js` app. 
+
+Next we will be using [Postman](https://www.postman.com/) to test the APIs we have created.  Postman is an API platform that makes it easy for developers to create, share, test and document APIs. This is done by allowing users to create and save simple and complex HTTP/S requests, as well as read their responses.  Download and sign up for a free account if you have not done so.
+
+
 
 
 
