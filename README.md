@@ -635,6 +635,10 @@ Type `node server.js` at the root folder to run the `node.js` app.
 
 Next we will be using [Postman](https://www.postman.com/) to test the APIs we have created.  Postman is an API platform that makes it easy for developers to create, share, test and document APIs. This is done by allowing users to create and save simple and complex HTTP/S requests, as well as read their responses.  Download and sign up for a free account if you have not done so.
 
+#### 6.1 Create a new tutorial using `POST /api/tutorials` API
+
+
+
 
 
 
