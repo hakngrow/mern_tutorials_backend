@@ -653,7 +653,7 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.1.7 Click on the `Send` button to fire the HTTP request to our `node.js` app.
 
-6.1.8 
+6.1.8 Done correctly, Postman will receive a HTTP response from the `node.js` app.  In the body of the response is the tutorial document created via the API.
 
 
 
