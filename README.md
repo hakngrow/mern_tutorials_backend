@@ -641,7 +641,7 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.1.1 Select the `POST` HTTP method.
 
-6.1.2 Enter `localhost:8080/api/tutorials` as the request URL. `localhost` refers to the computer on which the `node.js` app is running on.  `8080` refers to the port that the `node.js` app was [configured]() to listen to. `/api/tutorials` together with the `POST` HTTP method invokes the [API]() to create a tutorial.
+6.1.2 Enter `localhost:8080/api/tutorials` as the request URL. `localhost` refers to the computer on which the `node.js` app is running on.  `8080` refers to the port that the `node.js` app was [configured](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#15-using-the-dotenv-module) to listen to. `/api/tutorials` together with the `POST` HTTP method invokes the [API](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) to create a tutorial.
 
 
 
