@@ -571,6 +571,8 @@ exports.findAllPublished = (req, res) => {
 
 ### 5. Define the API Routes
 
+Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+
 | Route | Method | Function |
 | --- | ---| --- |
 | `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
