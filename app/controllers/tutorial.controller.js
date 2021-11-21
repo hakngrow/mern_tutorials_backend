@@ -2,7 +2,7 @@ const db = require("../models");
 
 const Tutorial = db.tutorials;
 
-// Create and Save a new Tutorial
+// Create and save a new tutorial
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.title) {
@@ -10,14 +10,14 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorial
+  // Create a tutorial
   const tutorial = new Tutorial({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published ? req.body.published : false,
   });
 
-  // Save Tutorial in the database
+  // Save tutorial in the database
   tutorial
     .save(tutorial)
     .then((data) => {
@@ -26,12 +26,12 @@ exports.create = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial.",
+          err.message || "Some error occurred while creating the tutorial.",
       });
     });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all tutorials from the database.
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title
@@ -50,24 +50,24 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single Tutorial with an id
+// Find a single tutorial with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
   Tutorial.findById(id)
     .then((data) => {
       if (!data)
-        res.status(404).send({ message: "Not found Tutorial with id " + id });
+        res.status(404).send({ message: "Not found tutorial with id " + id });
       else res.send(data);
     })
     .catch((err) => {
       res
         .status(500)
-        .send({ message: "Error retrieving Tutorial with id=" + id });
+        .send({ message: "Error retrieving tutorial with id=" + id });
     });
 };
 
-// Update a Tutorial by the id in the request
+// Update a tutorial by the id in the request
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
@@ -81,18 +81,18 @@ exports.update = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`,
+          message: `Cannot update tutorial with id=${id}. Maybe tutorial was not found!`,
         });
-      } else res.send({ message: "Tutorial was updated successfully." });
+      } else res.send({ message: "tutorial was updated successfully." });
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id,
+        message: "Error updating tutorial with id=" + id,
       });
     });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a tutorial with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -100,7 +100,7 @@ exports.delete = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`,
+          message: `Cannot delete tutorial with id=${id}. Maybe tutorial was not found!`,
         });
       } else {
         res.send({
@@ -110,12 +110,12 @@ exports.delete = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id=" + id,
+        message: "Could not delete tutorial with id=" + id,
       });
     });
 };
 
-// Delete all Tutorials from the database.
+// Delete all tutorials from the database.
 exports.deleteAll = (req, res) => {
     Tutorial.deleteMany({})
     .then(data => {
@@ -131,7 +131,7 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// Find all published Tutorials
+// Find all published tutorials
 exports.findAllPublished = (req, res) => {
     Tutorial.find({ published: true })
     .then(data => {
