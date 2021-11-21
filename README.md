@@ -643,6 +643,18 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.1.2 Enter `localhost:8080/api/tutorials` as the request URL. `localhost` refers to the computer on which the `node.js` app is running on.  `8080` refers to the port that the `node.js` app was [configured](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#15-using-the-dotenv-module) to listen to. `/api/tutorials` together with the `POST` HTTP method invokes the [API](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) to create a tutorial.
 
+6.1.3 Click on the `Body` tab to provide the tutorial data in the body of the HTTP POST request.
+
+6.1.4 Click on the `raw` option as we will be providing the tutorial data in JSON format.
+
+6.1.5 Select the `JSON` option.
+
+6.1.6 Construct a JSON object with the tutorial fields of `title` and `description`.
+
+6.1.7 Click on the `Send` button to fire the HTTP request to our `node.js` app.
+
+6.1.8 
+
 
 
 
