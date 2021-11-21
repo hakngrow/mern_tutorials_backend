@@ -575,7 +575,7 @@ Using the combination of API path and HTTP request methods (GET, POST, PUT, DELE
 
 | Route | Method | Function |
 | --- | ---| --- |
-| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
+| `/api/tutorials` |  GET | [Retrieve all tutorials by `title`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
 | `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
 | `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
 | `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#43-retrieve-a-tutorial) |
@@ -583,6 +583,38 @@ Using the combination of API path and HTTP request methods (GET, POST, PUT, DELE
 | `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#45-delete-a-tutorial) |
 | `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#47-find-all-published-tutorials) |
 
+In the `app` folder, create a `routes` folder. In the `routes` folder, create a `tutorial.routes.js` file with the following:
+
+```
+module.exports = app => {
+    const tutorials = require("../controllers/tutorial.controller.js");
+  
+    var router = require("express").Router();
+  
+    // Create a new tutorial
+    router.post("/", tutorials.create);
+  
+    // Retrieve all tutorials
+    router.get("/", tutorials.findAll);
+  
+    // Retrieve all published tutorials
+    router.get("/published", tutorials.findAllPublished);
+  
+    // Retrieve a single tutorial with id
+    router.get("/:id", tutorials.findOne);
+  
+    // Update a tutorial with id
+    router.put("/:id", tutorials.update);
+  
+    // Delete a tutorial with id
+    router.delete("/:id", tutorials.delete);
+  
+    // Create a new tutorial
+    router.delete("/", tutorials.deleteAll);
+  
+    app.use('/api/tutorials', router);
+  };
+```
 
 
 
