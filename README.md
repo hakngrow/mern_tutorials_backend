@@ -618,14 +618,18 @@ module.exports = app => {
 
 We define our routing rules using the `express.js` framework.  Note how `express` routing is done using the path, HTTP method and route parameters.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
 
-We require the `express` module and `tutorial.controller.js` that we defined [earlier]().  We also need to register these routing rules with the app by requiring it in the `server.js`.
+We require the `express` module and `tutorial.controller.js` that we defined [earlier]().  To make these API routes work, we need to register them with the app by requiring it in `server.js`.
 
 ```
 ...
+
 // API routes
 require("./app/routes/tutorial.routes")(app);
+
 ...
 ```
+
+### 6. Test the APIs
 
 
 
