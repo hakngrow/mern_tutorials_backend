@@ -573,7 +573,7 @@ exports.findAllPublished = (req, res) => {
 
 | Route | Method | Function |
 | --- | ---| --- |
-| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-retrieve-all-tutorials) |
+| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
 | `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
 | `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
 | `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-retrieve-a-tutorial) |
