@@ -424,7 +424,7 @@ exports.create = (req, res) => {
 };
 ```
 
-#### 4.2 Retrieving tutorials by `title`
+#### 4.2 Retrieve all tutorials by `title`
 
 ```
 // Retrieve all tutorials from the database.
@@ -453,7 +453,7 @@ We use `req.query.title` to get the query string from the HTML request and set i
 { title: { $regex: new RegExp(title), $options: "i" } }
 ```
 
-#### 4.3 Retrieving a single tutorial
+#### 4.3 Retrieve a tutorial
 
 ```
 // Find a single tutorial with an id
@@ -474,7 +474,7 @@ exports.findOne = (req, res) => {
 };
 ```
 
-#### 4.4 Updating a tutorial
+#### 4.4 Update a tutorial
 
 ```
 // Update a tutorial by the id in the request
@@ -503,7 +503,7 @@ exports.update = (req, res) => {
 };
 ```
 
-#### 4.5 Deleting a tutorial
+#### 4.5 Delete a tutorial
 
 ```
 // Delete a tutorial with the specified id in the request
@@ -530,7 +530,7 @@ exports.delete = (req, res) => {
 };
 ```
 
-#### 4.6 Deleting all tutorials
+#### 4.6 Delete all tutorials
 
 ```
 // Delete all tutorials from the database.
@@ -573,13 +573,13 @@ exports.findAllPublished = (req, res) => {
 
 | Route | Method | Function |
 | --- | ---| --- |
-| `/api/tutorials` |  GET | [Retrieve all tutorials]() |
+| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-retrieve-all-tutorials) |
 | `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
-| `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-deleting-all-tutorials) |
-| `/api/tutorials/:id` | GET | Get a single tutorial with `id` |
-| `/api/tutorials/:id` | PUT | Updates a tutorial with `id` |
-| `/api/tutorials/:id` | DELETE | Delete a tutorial with `id` |
-| `/api/tutorials/published` | GET | Retrieves all published tutorials |
+| `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
+| `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-retrieve-a-tutorial) |
+| `/api/tutorials/:id` | PUT | [Updates a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-update-a-tutorial) |
+| `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-a-tutorial) |
+| `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-find-all-published-tutorials) |
 
 
 
