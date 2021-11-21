@@ -571,6 +571,15 @@ exports.findAllPublished = (req, res) => {
 
 ### 5. Define the API Routes
 
+| Route | Method | Function |
+| --- | ---| --- |
+| `/api/tutorials` |  GET | Retrieve all tutorials |
+| `/api/tutorials` | POST | Create a new tutorial |
+| `/api/tutorials` | DELETE | Delete all tutorials |
+| `/api/tutorials/:id` | GET | Get a single tutorial with `id` |
+| `/api/tutorials/:id` | PUT | Updates a tutorial with `id` |
+| `/api/tutorials/:id` | DELETE | Delete a tutorial with `id` |
+| `/api/tutorials/published` | GET | Retrieves all published tutorials |
 
 
 
