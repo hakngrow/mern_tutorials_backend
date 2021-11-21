@@ -16,7 +16,7 @@ The following table shows an overview of the REST APIs that will be built:
 | GET | api/tutorials?title=[keywords] | Find all tutorials with title contains keywords |
 
 
-### REST APIs App Structure
+#### REST APIs App Structure
 
 ![Project Structure](/public/images/project_structure.jpg)
 
@@ -29,25 +29,25 @@ The following table shows an overview of the REST APIs that will be built:
 | `tutorial.routes.js` | Mapping of API routes to the controller functions |
 
 
-### Create Node.js App
+### 1. Create Node.js App
 
-#### 1. Create a application folder
+#### 1.1 Create a application folder
 ```
 mkdir mern_tutorials_backend
 cd mern_tutorials_backend
 ```
 
-#### 2. Initialize a Node.js application
+#### 1.2 Initialize a Node.js application
 ```
 npm init
 ```
 
-#### 3.  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
+#### 1.3  Install the necessary modules: `express`, `mongoose`, `cors`, `dotenv`
 ```
 npm install express mongoose cors dotenv --save
 ```
 
-#### 4. Setup the Express web application framework<br/>
+#### 1.4 Setup the Express web application framework<br/>
 
 Using your preferred code editor, create a new `server.js` file in the application root folder.
 
@@ -83,13 +83,14 @@ app.listen(PORT, () => {
 });
 ```
 
-#### Using the `dotenv` module
+#### 1.5 Using the `dotenv` module
 
 Using `dotenv`, we load configuration parameters in a `.env` file into `process.env`.
 
 Create a `.env` file with the following contents at the root folder (refer to App structure). 
 ```
 # Database credentials
+DB_NAME=<Your DB name>
 DB_USER=<Your DB user name>
 DB_PASSWORD=<Your DB user password>
 
@@ -107,7 +108,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 ```
 
-#### Using the `cors` module
+#### 1.6 Using the `cors` module
 
 CORS is for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the Access-Control-Allow-Origin headers, which specify which origins can access the API.
 
@@ -124,14 +125,14 @@ var corsOptions = {
 app.use(cors(corsOptions));
 ```
 
-#### Using the `express` module
+#### 1.7 Using the `express` module
 
 We use the `express` web application framework to create the REST APIs.  In the initial `server.js`, we do the following:
 1. Parse requests of type JSON and URL encoded form data
 2. Define a GET route for simple testing
 3. Listen to port 8080 for incoming requests
 
-#### Verify Setup
+#### 1.8 Verify Setup
 
 To verify the setup so far, run `node server.js` at the root folder.
 
@@ -145,15 +146,21 @@ If you see the following JSON response in your browser, the setup is working and
 
 We will be using the [MongoDB Atlas](https://www.mongodb.com) the cloud-hosted MongoDB service.  Head over to their URL and create a free account. 
 
+#### 2.1 Create an organization
+
 After your account is created, you can proceed to create an organization.  Give your organization a name.  Select MongoDB Atlas as the cloud service.  After which, you will be prompted to add members and set permissions.  Since you are the only user, ignore this part and proceed to create the organization.
 
 ![Create an organization](/public/images/create_organization.jpg)
+
+#### 2.2 Create a project
 
 Under your new organization, create a new project.  Give your project a name.  Again ignore the prompt to add members and set permissions, and create the project.
 
 ![Create a project](/public/images/create_project.jpg)
 
-In your new project, create a new database.  Be sure to select the free and shared option, or else, you will have to pay for it.
+#### 2.3 Create a cluster
+
+In your new project, create a new cluster.  Be sure to select the free and shared option, or else, you will have to pay for it.
 
 ![Select the free, shared cluster](/public/images/select_free_cluster.jpg)
 
@@ -169,6 +176,8 @@ It will take a while to provision the new cluster.  After it is done, it will ap
 
 ![Database Deployments](/public/images/database_deployments.jpg)
 
+#### 2.4 Create a database and collection
+
 Click on the `Browse Collections` and then the `Add My Own Data` buttons to start creating a database. 
 
 ![Create a database](/public/images/create_database.jpg)
@@ -176,6 +185,8 @@ Click on the `Browse Collections` and then the `Add My Own Data` buttons to star
 Give your database a meaningful name.  A collection in MongoDB is like a table in a traditional DBMS.  We will name our collection `tutorials`. 
 
 ![Name your database](/public/images/database_name.jpg)
+
+#### 2.5 Create a database user
 
 After creating the database and collection, we need to create a database user account that our APIs will use to access the database.  Click on `Database Access` on the navigation side bar.  Click on the `ADD NEW DATABASE USER` button.
 
@@ -185,13 +196,11 @@ Select `Password` for Authentication Method, enter your desired user name and pa
 
 ![Add a database user](/public/images/create_user.jpg)
 
+#### 2.6 Copy connection string
+
 Next, we need to connect to the database for our APIs to perform CRUD operations.  Click on `Databases` on the left navigation side bar.  Click on the `Connect` button.
 
 ![Database Deployments](/public/images/database_deployments.jpg)
-
-Click on the `Overview` tab and the `Connect` button.
-
-![Connect to your database](/public/images/connect_button.jpg)
 
 Click on the `Connect your application` button to learn how to connect to the database.
 
@@ -201,7 +210,7 @@ To connect our `node.js` application to the MongoDB Atlas, we need a connection 
 
 ![Copy your connection string](/public/images/connection_string.jpg)
 
-Make sure that `node.js` is selected for the driver and `4.0 or later` for the version.  The format of the connection string will be similar to the one below.  You will have to replace the `<user name>`, `<password>` and `<database>` sections with the values that you used earlier when creating the database. Copy the connection string and store it somewhere safe.
+Make sure that `node.js` is selected for the driver and `4.0 or later` for the version.  The format of the connection string will be similar to the one below.  You will have to replace the `<user name>`, `<password>` and `<database>` sections with the values that you used earlier when creating the database and user account. Copy the connection string and store it somewhere safe.
 
 ```
 mongodb+srv://<user name>:<password>@mern.cqtzf.mongodb.net/<database name>?retryWrites=true&w=majority
@@ -215,5 +224,368 @@ In summary, these are the following steps needed to get MongoDB Atlas ready for 
 5. Create a database
 6. Create a database user
 7. Copy the connection string
+
+
+### 3. Connect Node.js to MongoDB
+
+The `mongoose` module ([installed earlier](https://github.com/hakngrow/mern_tutorials_backend#13--install-the-necessary-modules-express-mongoose-cors-dotenv)) is an MongoDB object modelling tool for `node.js`.  It allows our REST APIs to perform CRUD opertions on the MongoDB database. 
+
+#### 3.1 Setup database config
+
+In the `app` folder, create a `config` folder (refer to the [app structure](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#rest-apis-app-structure)).  In the `config` folder create a database config file `db.config.js` with the following:
+
+```
+module.exports = {
+  url: `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.cp50y.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+};
+```
+
+Note that the values of `process.env.DB_USER`, `process.env.DB_PASSWORD` and `process.env.DB_NAME` are stored in the `.env` file we created in the [`dotenv`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#15-using-the-dotenv-module) section.
+
+#### 3.2 Define `Mongoose`
+
+In the `app` folder, create a `models` folder.  In the `models` folder, create a `index.js` file with the following:
+
+```
+const dbConfig = require("../config/db.config.js");
+
+const mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
+
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+db.tutorials = require("./tutorial.model.js")(mongoose);
+
+module.exports = db;
+```
+
+We `require` the database config file and the 'mongoose' module.  We then store the `mongoose` module, the connection string, and the tutorial model in an object, and expose it via `exports`.  We will create the tutorial model in the next section
+
+#### 3.3 Tutorial model
+
+In the `models` folder, create a `tutorial.model.js` file with the following:
+
+```
+module.exports = mongoose => {
+  var schema = mongoose.Schema(
+    {
+      title: String,
+      description: String,
+      published: Boolean
+    },
+    { timestamps: true }
+  );
+
+  const Tutorial = mongoose.model("tutorial", schema);
+  
+  return Tutorial;
+};
+```
+
+The Tutorial `mongoose` model above represents the `tutorial` collection we created earlier in the [MongoDB setup](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#24-create-a-database-and-collection).  The model can be liken to the table definition of a traditional RDBMS.  
+
+Inserting a tutorial via Mongoose will produce the following document object.  A document is like a row or record in traditional RDBMS.  Because we included `{ timestamps: true }` in the schema, the `createdAt` and `updatedAt` fields are auto-generated and updated. The `_id` and `__v` field are the auto-generated primary key and version key respectively.
+
+```
+{
+  "_id": "5e363b135036a835ac1a7da8",
+  "title": "Javascript Tutorial",
+  "description": "Description for tutorial",
+  "published": true,
+  "createdAt": "2020-02-02T02:59:31.198Z",
+  "updatedAt": "2020-02-02T02:59:31.198Z",
+  "__v": 0
+}
+```
+
+In our front-end later, we will be using a primary key `id` field instead of `_id`.  As such, we have to override the `toJSON` method that maps the default object to a custom object.  The `mongoose` model can be modified as follows:
+```
+module.exports = mongoose => {
+  var schema = mongoose.Schema(
+    {
+      title: String,
+      description: String,
+      published: Boolean
+    },
+    { timestamps: true }
+  );
+
+  // Override toJSON function
+  schema.method("toJSON", function() {
+    // Deconstruct into custom object that excludes auto-generated fields __v and _id
+    const { __v, _id, ...object } = this.toObject();
+
+    // Create new id field with value of primary key _id 
+    object.id = _id;
+
+    return object;
+  });
+
+  const Tutorial = mongoose.model("tutorial", schema);
+  
+  return Tutorial;
+};
+```
+
+In doing so, inserting a tutorial document produces the following object:
+```
+{
+  "id": "5e363b135036a835ac1a7da8",
+  "title": "Javascript Tutorial",
+  "description": "Description for tutorial",
+  "published": true,
+  "createdAt": "2020-02-02T02:59:31.198Z",
+  "updatedAt": "2020-02-02T02:59:31.198Z"
+}
+```
+
+At this point, the `node.js` application is basically linked, via `mongoose`, to the MongoDB.  We can proceed to create the controller that implements the CRUD operations using the `mongoose` model.
+
+
+### 4. Create the Controller
+
+In the `app` folder, create a `controllers` folder.  In the `controllers` folder, create a `tutorial.controller.js` file with the following CRUD functions:
+- create:  to create a new tutorial
+- findAll: to retrieve all tutorials
+- findOne: to find a tutorial by `id`
+- update: to update a tutorial by `id`
+- delete: to remove a tutorial by `id`
+- deleteAll: to remove all tutorials
+- findAllPublished: to find all tutorials by `title`
+
+By requiring the `models` folder, we load the [`index.js`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#32-define-mongoose) from the `models` folder, which in turn loads the `tutorial` model defined [previously](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#33-tutorial-model).  For more information about the `mongoose` model API, please click [here](https://mongoosejs.com/docs/models.html).
+
+```
+const db = require("../models");
+
+const Tutorial = db.tutorials;
+
+// Create and save a new tutorial
+exports.create = (req, res) => {
+};
+
+// Retrieve all tutorials from the database.
+exports.findAll = (req, res) => {
+};
+
+// Find a single tutorial with an id
+exports.findOne = (req, res) => {
+};
+
+// Update a tutorial by the id in the request
+exports.update = (req, res) => {
+};
+
+// Delete a tutorial with the specified id in the request
+exports.delete = (req, res) => {
+};
+
+// Delete all tutorials from the database.
+exports.deleteAll = (req, res) => {
+};
+
+// Find all published tutorials
+exports.findAllPublished = (req, res) => {
+};
+```
+
+#### 4.1 Create a new tutorial
+
+```
+// Create and save a new tutorial
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body.title) {
+    res.status(400).send({ message: "Content cannot be empty!" });
+    return;
+  }
+
+  // Create a tutorial
+  const tutorial = new Tutorial({
+    title: req.body.title,
+    description: req.body.description,
+    published: req.body.published ? req.body.published : false,
+  });
+
+  // Save tutorial in the database
+  tutorial
+    .save(tutorial)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the tutorial.",
+      });
+    });
+};
+```
+
+#### 4.2 Retrieve all tutorials by `title`
+
+```
+// Retrieve all tutorials from the database.
+exports.findAll = (req, res) => {
+  const title = req.query.title;
+  var condition = title
+    ? { title: { $regex: new RegExp(title), $options: "i" } }
+    : {};
+
+  Tutorial.find(condition)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+};
+```
+
+We use `req.query.title` to get the query string from the HTML request and set it as a condition for `findAll()` method.  The condition is defined as a regular expression (`$regex`).  The `$options` set to `"i"` means the match will be case-insensitive.
+
+```
+{ title: { $regex: new RegExp(title), $options: "i" } }
+```
+
+#### 4.3 Retrieve a tutorial
+
+```
+// Find a single tutorial with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  Tutorial.findById(id)
+    .then((data) => {
+      if (!data)
+        res.status(404).send({ message: "Not found tutorial with id " + id });
+      else res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving tutorial with id=" + id });
+    });
+};
+```
+
+#### 4.4 Update a tutorial
+
+```
+// Update a tutorial by the id in the request
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!",
+    });
+  }
+
+  const id = req.params.id;
+
+  Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update tutorial with id=${id}. Maybe tutorial was not found!`,
+        });
+      } else res.send({ message: "Tutorial was updated successfully." });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error updating tutorial with id=" + id,
+      });
+    });
+};
+```
+
+#### 4.5 Delete a tutorial
+
+```
+// Delete a tutorial with the specified id in the request
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  Tutorial.findByIdAndRemove(id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot delete tutorial with id=${id}. Maybe tutorial was not found!`,
+        });
+      } else {
+        res.send({
+          message: "Tutorial was deleted successfully!",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Could not delete tutorial with id=" + id,
+      });
+    });
+};
+```
+
+#### 4.6 Delete all tutorials
+
+```
+// Delete all tutorials from the database.
+exports.deleteAll = (req, res) => {
+    Tutorial.deleteMany({})
+    .then(data => {
+      res.send({
+        message: `${data.deletedCount} Tutorials were deleted successfully!`
+      });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while removing all tutorials."
+      });
+    });
+};
+```
+
+#### 4.7 Find all published tutorials
+
+```
+// Find all published tutorials
+exports.findAllPublished = (req, res) => {
+    Tutorial.find({ published: true })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
+```
+
+
+### 5. Define the API Routes
+
+Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+
+| Route | Method | Function |
+| --- | ---| --- |
+| `/api/tutorials` |  GET | [Retrieve all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#42-retrieve-all-tutorials-by-title) |
+| `/api/tutorials` | POST | [Create a new tutorial](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#41-create-a-new-tutorial) |
+| `/api/tutorials` | DELETE | [Delete all tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#46-delete-all-tutorials) |
+| `/api/tutorials/:id` | GET | [Retrieve a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#43-retrieve-a-tutorial) |
+| `/api/tutorials/:id` | PUT | [Updates a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#44-update-a-tutorial) |
+| `/api/tutorials/:id` | DELETE | [Delete a tutorial with `id`](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#45-delete-a-tutorial) |
+| `/api/tutorials/published` | GET | [Retrieves all published tutorials](https://github.com/hakngrow/mern_tutorials_backend/blob/master/README.md#47-find-all-published-tutorials) |
+
+
+
+
+
 
 
