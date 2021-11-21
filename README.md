@@ -571,7 +571,7 @@ exports.findAllPublished = (req, res) => {
 
 ### 5. Define the API Routes
 
-Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+Using the combination of API path and HTTP request methods (GET, POST, PUT, DELETE), we expose the CRUD operations defined previously in the controller to a client.  
 
 | Route | Method | Function |
 | --- | ---| --- |
@@ -614,6 +614,17 @@ module.exports = app => {
   
     app.use('/api/tutorials', router);
   };
+```
+
+We define our routing rules using the `express.js` framework.  Note how `express` routing is done using the path, HTTP method and route parameters.  For more infromation on how routing work in `express.js`, click [here](https://expressjs.com/en/guide/routing.html).
+
+We require the `express` module and `tutorial.controller.js` that we defined [earlier]().  We also need to register these routing rules with the app by requiring it in the `server.js`.
+
+```
+...
+// API routes
+require("./app/routes/tutorial.routes")(app);
+...
 ```
 
 
