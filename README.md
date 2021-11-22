@@ -671,6 +671,26 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 #### 6.3 Update a tutorial using `PUT /tutorials/:id` API
 
+![Update a tutorial](/public/images/test_update_tutorial.jpg)
+
+6.3.1 Select the `PUT` HTTP method.
+
+6.3.2 Enter `localhost:8080/api/tutorials/6199d191fc3b6060e3abd093` as the request URL.
+
+6.3.3 Click on the `Body` tab.
+
+6.3.4 Click on the `raw` option as we will be providing the tutorial updates in JSON format.
+
+6.3.5 Select the `JSON` option.
+
+6.3.6 Construct a JSON object with the tutorial fields of `description` and `published`, and give them some arbitrary values.
+
+6.3.7 Click on the `Send` button.
+
+6.3.8 A returned JSON message states that the update was successful.
+
+#### 6.4 Find all tutorials with `title` containing "javascript" using `GET /tutorials?title=javascript` API
+
 
 
 
