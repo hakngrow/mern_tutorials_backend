@@ -665,9 +665,11 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.2.3 Click on the `Body` tab.
 
-6.2.4 Click on the `none' option to specify that this HTTP request has no body.
+6.2.4 Click on the `none` option to specify that this HTTP request has no body.
 
 6.2.5 Postman receives a HTTP response with a tutorial document JSON object in the body.
+
+#### 6.3 Update a tutorial using `PUT /tutorials/:id` API
 
 
 
