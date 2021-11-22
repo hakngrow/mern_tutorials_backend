@@ -693,6 +693,12 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 ![Retrieve tutorials by title](/public/images/test_retrieve_tutorials_title.jpg)
 
+#### 6.5 Find all published tutorials using `GET /tutorials/published` API
+
+![Retrieve published tutorials](/public/images/test_retrieve_tutorials_published.jpg)
+
+
+
 
 
 
