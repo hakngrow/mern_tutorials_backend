@@ -687,7 +687,9 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.3.7 Click on the `Send` button.
 
-6.3.8 A returned JSON message informs that the update was successful.
+6.3.8 A returned JSON message states that the update was successful.
+
+### 6.4 Find all tutorials with `title` containing "javascript" using `GET /tutorials?title=javascript` API
 
 
 
