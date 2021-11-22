@@ -17,9 +17,11 @@ The following table shows an overview of the REST APIs that will be built:
 
 #### REST APIs Architecture
 
+Our Node.js + Express + MongoDB Atlas application will follow this architecture:
+
 ![Project Architecture](/public/images/architecture.jpg)
 
-
+Node.js Express exports REST APIs & interacts with MongoDB Atlas database using Mongoose ODM.
 
 #### REST APIs App Structure
 
