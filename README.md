@@ -655,6 +655,7 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.1.8 Done correctly, Postman will receive a HTTP response from the `node.js` app.  In the body of the response is the tutorial document created.  Besides the `title` and `description` fields we provided in the request, the `published` field is initialized to `false`, the `id` and timestamp fields are auto-generated.
 
+
 #### 6.2 Retrieve a tutorial by id using `GET /tutorials/:id` API
 
 ![Retrieve a tutorial](/public/images/test_retrieve_tutorial.jpg)
@@ -668,6 +669,7 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 6.2.4 Click on the `none` option to specify that this HTTP request has no body.
 
 6.2.5 Postman receives a HTTP response with a tutorial document JSON object in the body.
+
 
 #### 6.3 Update a tutorial using `PUT /tutorials/:id` API
 
@@ -689,21 +691,22 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 6.3.8 A returned JSON message states that the update was successful.
 
+
 #### 6.4 Find all tutorials with `title` containing "javascript" using `GET /tutorials?title=javascript` API
 
 ![Retrieve tutorials by title](/public/images/test_retrieve_tutorials_title.jpg)
+
 
 #### 6.5 Find all published tutorials using `GET /tutorials/published` API
 
 ![Retrieve published tutorials](/public/images/test_retrieve_tutorials_published.jpg)
 
 
+#### 6.6 Delete a tutorial using `DELETE /tutorials/:id` API
+
+![Delete a tutorial](/public/images/test_delete_tutorial.jpg)
 
 
+#### 6.7 Delete all tutorials using `DELETE /tutorials` API
 
-
-
-
-
-
-
+![Delete all tutorials](/public/images/test_delete_tutorials.jpg)
