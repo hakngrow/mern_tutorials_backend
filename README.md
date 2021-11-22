@@ -15,6 +15,11 @@ The following table shows an overview of the REST APIs that will be built:
 | GET | api/tutorials/published | Get all published tutorials |
 | GET | api/tutorials?title=[keywords] | Find all tutorials with title contains keywords |
 
+#### REST APIs Architecture
+
+![Project Architecture](/public/images/architecture.jpg)
+
+
 
 #### REST APIs App Structure
 
