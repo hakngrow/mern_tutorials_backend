@@ -657,6 +657,20 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 #### 6.2 Retrieve a tutorial by id using `GET /tutorials/:id` API
 
+![Retrieve a tutorial](/public/images/test_retrieve_tutorial.jpg)
+
+6.2.1 Select the `GET` HTTP method.
+
+6.2.2 Enter `localhost:8080/api/tutorials/6199d191fc3b6060e3abd093` as the request URL. `6199d191fc3b6060e3abd093` is the `id` of the tutorial you wish to retrieve.
+
+6.2.3 Click on the `Body` tab.
+
+6.2.4 Click on the `none` option to specify that this HTTP request has no body.
+
+6.2.5 Postman receives a HTTP response with a tutorial document JSON object in the body.
+
+#### 6.3 Update a tutorial using `PUT /tutorials/:id` API
+
 
 
 
