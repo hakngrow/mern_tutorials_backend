@@ -691,6 +691,8 @@ Next we will be using [Postman](https://www.postman.com/) to test the APIs we ha
 
 #### 6.4 Find all tutorials with `title` containing "javascript" using `GET /tutorials?title=javascript` API
 
+![Retrieve tutorials by title](/public/images/test_retrieve_tutorials_title.jpg)
+
 
 
 
